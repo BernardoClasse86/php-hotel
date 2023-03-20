@@ -75,7 +75,6 @@
                 <tbody>
 
                     <?php
-
                     foreach ($hotels as $key => $value):
                         // var_dump($key);
                         // var_dump($value);
@@ -86,8 +85,8 @@
                         $hotel_park = $value['parking'];
                         $hotel_vote = $value['vote'];
                         $hotel_dist = $value['distance_to_center'];
-
                     ?>
+
                     <tr>
                         <td><?php echo $hotel_name; ?></td>
                         <td><?php echo $hotel_desc; ?></td>
@@ -103,10 +102,9 @@
                         <td><?php echo $hotel_vote; ?></td>
                         <td><?php echo $hotel_dist; ?></td>
                     </tr>
+                    
                     <?php
                     endforeach;
-
-                    if ($value['name'])
                     ?>
 
                 </tbody>
