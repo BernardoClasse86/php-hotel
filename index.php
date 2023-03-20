@@ -56,22 +56,62 @@
     <body>
         <div class="container">
 
-            <ul>
-                <?php
-                foreach ($hotels as $key => $value):
-                    var_dump($key);
-                    // var_dump($value);
-                    // var_dump($value['name']);
-                ?>
-                <li><?php echo $value['name']; ?></li>
-                <li><?php echo $value['description']; ?></li>
-                <li><?php echo $value['parking']; ?></li>
-                <li><?php echo $value['vote']; ?></li>
-                <li><?php echo $value['distance_to_center']; ?></li>
-                <?php
-                endforeach;
-                ?>
-            </ul>
+            <table class="table">
+
+                <thead>
+
+                    <tr>
+
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Parking</th>
+                        <th scope="col">Vote</th>
+                        <th scope="col">Distance To Center</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <?php
+
+                    foreach ($hotels as $key => $value):
+                        // var_dump($key);
+                        // var_dump($value);
+                        // var_dump($value['name']);
+
+                        $hotel_name = $value['name'];
+                        $hotel_desc = $value['description'];
+                        $hotel_park = $value['parking'];
+                        $hotel_vote = $value['vote'];
+                        $hotel_dist = $value['distance_to_center'];
+
+                    ?>
+                    <tr>
+                        <td><?php echo $hotel_name; ?></td>
+                        <td><?php echo $hotel_desc; ?></td>
+                        <td>
+                            <?php 
+                                if ($hotel_park === true) {
+                                    echo 'yes';
+                                } else {
+                                    echo 'no';
+                                }
+                            ?>
+                        </td>
+                        <td><?php echo $hotel_vote; ?></td>
+                        <td><?php echo $hotel_dist; ?></td>
+                    </tr>
+                    <?php
+                    endforeach;
+
+                    if ($value['name'])
+                    ?>
+
+                </tbody>
+                
+            </table>
 
         </div>
         
